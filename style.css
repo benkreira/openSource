@@ -1,0 +1,456 @@
+html,body{
+    box-sizing: border-box;
+    background-color: rgb(30, 30, 50);
+    font-family: 'Ubuntu', sans-serif;
+} 
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, p, ol, ul{
+    margin:0 !important;
+    padding:0 !important;
+    font-weight: normal;
+    
+} 
+
+ol, ul{
+    list-style: none;
+}
+
+a:hover{
+    text-decoration: none;
+} 
+body{
+    width: 100%;
+    max-width: 100%;
+   
+}
+
+
+
+
+.main .header{
+    position: fixed;
+    z-index: 22;
+    top: 0;
+    color: white;
+    height: auto;
+    width: 100%;
+    background-color: rgb(30, 30, 50,0.6) !important;
+}
+
+.main .header .navbar .navbar-brand{
+display: inline-block;
+padding: 5px 10px;
+margin-left: 20px;
+margin-right: 50px;
+}
+
+
+.main .header .navbar a{
+color: white;
+    }
+    
+
+.main .header .navbar .navbar-toggler i{
+color: white;
+height: 50px !important;
+}
+
+.main .header .navbar .navbar-nav a{
+    
+    margin-left: 30px;
+}
+
+.main .header .navbar .navbar-nav{
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+}
+
+.main .header .menu{
+    display: inline-block;
+}
+
+.main .header .menu ul{
+    position: absolute;
+    right: 30px; 
+    top: 10px;
+    display: inline-block;
+    background-color: transparent;
+}
+
+.main .header ul li{
+    font-weight: 400;
+    color: white;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin: 15px 15px;
+}
+.main .header ul li a{
+color: white;
+}
+
+
+.av-slides{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    max-width: 100%;
+    margin-bottom: 50px;
+}
+
+.av-slides .back-img{
+    z-index:0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 100% !important;
+    max-width: 100%;
+    filter: blur(6px);
+    transition: all 1.5s; 
+    transform: scale(1);
+    
+}
+
+.av-slides .back-img img{
+width: 100% !important;
+height: 100% !important;
+max-width: 100% !important;
+max-height: 100% !important;    
+}
+/*
+.av-slides .back-img img:hover{ 
+
+    filter: blur(2px);
+    max-width: 100%;
+    transform: scale(1.01);
+    transition: all 2s; 
+}
+*/
+
+/* style the header */
+
+
+
+.av-slides .slides img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  
+}
+
+.av-slides .slides #current h1{
+    width: 100%;
+    background-color: rgb(30, 30, 50,0.6) !important;
+    text-align: center;
+    font-size: 200% !important;
+    position: absolute;
+    bottom: 0px;
+    padding-top: 15px !important;
+    color: white;
+}
+
+
+
+.av-slides .slides .slide-current{   
+    width: 60%;
+    height: 55%;
+     position: absolute;
+    left: 50%;
+    transform: translate(-50%,0%);
+    top: 30vh;
+    border: solid 10px white;
+    z-index: 3;
+    animation: current-slide;
+    animation-duration: 2s;
+}
+
+.av-slides .slides .slide-prev{
+    width: 30%;
+    height: 25%;
+    position: absolute;
+    left: 10%;
+    top: 40%;
+    border: 2px solid white;
+    animation-name: prev-slide;
+    animation-duration: 2s;
+}
+  
+.av-slides .slides .slide-next{
+    width: 30%;
+    height: 25%;
+    position: absolute;
+    right: 10%;
+    top: 40%;
+    border: 2px solid white;
+    animation-name: next-slide;
+    animation-duration: 2s; 
+}
+
+.av-slides .slides .slide-current .message{
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    bottom: 0px;
+    padding-top: 15px ;
+    background-color: rgba(50, 50, 50, 0.8);
+    text-align: left;
+    font-size: 3rem !important;
+}
+
+@keyframes current-slide {
+    from{
+        width: 200px;;
+        height: 150px;
+        /*position: absolute;
+        left: 12%;
+        top: 25%;
+        font-size: 100%; */
+        transform: translate3d(-550px,70px,0px);      
+    }
+    }
+
+@keyframes next-slide{
+    from{
+        width: 60%;
+        height: 55%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0%);
+        top:30vh;
+    }
+}
+
+
+@keyframes prev-slide{
+    from{
+        width: 20px;
+        height: 10px;
+        margin-top: 100px;
+        transform: translateX(500px)
+    }
+}
+
+
+/* styling the next and previous buttons */
+
+.av-slides .next{
+    position:absolute;
+    background-color: rgb(46, 58, 80,0.5);
+    padding-left: 15px;
+    padding-top: 30px;
+    height: 80px;
+    width: 40px;
+    right: 20px;
+    top: 45%;
+    cursor:cell;
+}
+
+.av-slides .before{
+    position:absolute;
+    background-color: rgb(46, 58, 80,0.5);
+    padding-left: 15px;
+    padding-top: 30px;
+    height: 80px;
+    width: 40px;
+    left: 20px;
+    top: 45%;
+    cursor:cell;  
+}
+
+.av-slides .slides .hidden-item{
+    display: none;
+}
+
+/* stling the about us section */
+.about h1{
+    color: #0080ff;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px !important;
+}
+
+.about .abt-msg .about-us{
+    color: #0080ff;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px !important;
+}
+.about .abt-img{
+    border-radius: 10% !important;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    padding: 26px 30px;
+    border-radius: 4px;
+    box-shadow: 0 25px 22px rgba(255,255,255, 0.2), 0 2px 10px 0 rgba(255,255,255, 0.2);
+
+}
+.about .abt-img img{
+   width: 300px;
+   height: 300px;
+  
+}
+.about .abt-msg{
+    border-radius: 10% !important;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    padding: 26px 30px;
+    border-radius: 4px;
+    box-shadow: 0 25px 22px rgba(255,255,255, 0.2), 0 2px 10px 0 rgba(255,255,255, 0.2);
+
+}
+.about .abt-msg .about-us h3{
+    font-size:28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: center;
+ 
+ }
+.about .abt-msg .abt-message{
+   font-size: 18px;
+   margin-top: 10px;
+
+}
+
+
+
+/* styling services items */
+.plans .plan-col
+{
+    padding: 0px 15px;
+}
+
+.plans h1{
+    color:  #0080ff !important;
+    margin-bottom: 40px !important;
+    width: 100%;
+    text-align: center;
+}
+
+.plans .plan-item{
+    color: white;
+    margin: 0px 10px;
+    padding: 10px 5px;
+    margin-bottom: 50px;
+    box-shadow: 0 25px 22px rgba(255,255,255, 0.2), 0 2px 10px 0 rgba(255,255,255, 0.2);
+
+}
+
+.plans .plan-item .plan-title{
+    color: #0080ff;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+
+.plans .plan-item .plan-image {
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+    margin-bottom: 15px;
+
+}
+
+.plans .plan-item .plan-image img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+
+}
+
+.plans .plan-item .plan-details{
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+
+.plans .plan-item .plan-details h4{
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 26px;
+
+}
+
+.plans .plan-item .plan-details ul li{
+    padding: 10px 15px;
+
+}
+
+.plans .plan-item .plan-details ul li i{
+    margin-right: 8px;
+
+}
+
+.plans .plan-item .plan-price{
+    padding:10px 15px ;
+}
+.plans .plan-item .plan-price h4 span{
+    font-size: 20px;
+   color:  #0080ff !important;
+    font-style: oblique;}
+
+
+
+.contact .contact-col{
+    width: 100%;
+    padding: 10px 14px;
+    height: auto;
+    
+}
+.contact h1{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px !important;
+    color: #0080ff;
+}
+.contact .contact-map {
+    box-shadow: 0 25px 22px rgba(255,255,255, 0.2), 0 2px 10px 0 rgba(255,255,255, 0.2);
+}
+
+.contact .contact-map  .map
+{
+    width: 100%;
+    height: 500px;
+    max-width: 100%;
+    
+}
+
+.contact .contact-info {
+    color: white;
+    box-shadow: 0 25px 22px rgba(255,255,255, 0.2), 0 2px 10px 0 rgba(255,255,255, 0.2);
+    font-size: 22px;
+    padding: 30px 30px;
+}
+.contact .contact-info .address,.phone,.email,.social-icons{
+    display: block;
+    margin-bottom: 30px;
+}
+
+.contact .contact-info  i{
+    display: inline-block;
+    margin-right: 30px;
+}
+.contact .contact-info h4{
+    display: inline-block;
+}
+.contact .contact-info .social-icons .icons{
+    width: 100%;
+    text-align: center;
+}
+.contact .contact-info ul li{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
